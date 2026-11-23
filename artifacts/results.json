@@ -1,0 +1,1875 @@
+{
+  "audit": {
+    "total_raw_orders": 99441,
+    "delivered_orders": 96478,
+    "valid_delivered_orders": 96470,
+    "orders_with_reviews": 95824,
+    "overall_late_count": 7826,
+    "overall_late_rate": 0.08112366538820359,
+    "train_orders": 71118,
+    "train_late_rate": 0.08789617255828341,
+    "oot_test_orders": 25352,
+    "oot_test_late_rate": 0.06212527611233828,
+    "oot_cutoff_iso": "2018-04-30 23:59:59",
+    "min_purchase_iso": "2016-09-15 12:16:38",
+    "max_purchase_iso": "2018-08-29 15:00:37",
+    "unique_sellers": 2959,
+    "unique_customer_states": 27,
+    "valid_geo_zip_prefixes": 19010,
+    "distance_coverage_rate": 0.9950554576552296
+  },
+  "temporal_benchmark": {
+    "best_clean_model_name": "lightgbm",
+    "best_clean_calibration": "isotonic",
+    "cv_fold_summaries": [
+      {
+        "fold": 1,
+        "train_size": 11853,
+        "val_size": 11853,
+        "val_start": "2017-06-07 19:54:10",
+        "val_end": "2017-09-12 02:24:31",
+        "val_late_rate": 0.03636210242132793,
+        "roc_auc": 0.5625463905086492,
+        "pr_auc": 0.04440879481211042,
+        "brier_score": 0.035244092359819186,
+        "ece_10": 0.01613486302884856
+      },
+      {
+        "fold": 2,
+        "train_size": 23706,
+        "val_size": 11853,
+        "val_start": "2017-09-12 06:22:08",
+        "val_end": "2017-11-24 17:54:35",
+        "val_late_rate": 0.0756770437863832,
+        "roc_auc": 0.6426113901231764,
+        "pr_auc": 0.11985209040303041,
+        "brier_score": 0.06975713967452091,
+        "ece_10": 0.028107490296951237
+      },
+      {
+        "fold": 3,
+        "train_size": 35559,
+        "val_size": 11853,
+        "val_start": "2017-11-24 17:55:14",
+        "val_end": "2018-01-17 09:57:13",
+        "val_late_rate": 0.09921538850923817,
+        "roc_auc": 0.710947589675563,
+        "pr_auc": 0.21253365145776237,
+        "brier_score": 0.08526142038681989,
+        "ece_10": 0.023157867752167948
+      },
+      {
+        "fold": 4,
+        "train_size": 47412,
+        "val_size": 11853,
+        "val_start": "2018-01-17 09:59:58",
+        "val_end": "2018-03-08 22:30:09",
+        "val_late_rate": 0.1609719058466211,
+        "roc_auc": 0.6796645175298524,
+        "pr_auc": 0.27613307110410074,
+        "brier_score": 0.13468920577032342,
+        "ece_10": 0.07219034813247614
+      },
+      {
+        "fold": 5,
+        "train_size": 59265,
+        "val_size": 11853,
+        "val_start": "2018-03-08 22:38:53",
+        "val_end": "2018-04-30 23:47:26",
+        "val_late_rate": 0.10815827216738379,
+        "roc_auc": 0.7777854847047917,
+        "pr_auc": 0.3070988484132552,
+        "brier_score": 0.10275892138324323,
+        "ece_10": 0.13171906790176233
+      }
+    ],
+    "records": [
+      {
+        "regime": "pre_dispatch_clean",
+        "model_name": "logistic_regression",
+        "calibration_method": "raw",
+        "cv_metrics": {
+          "roc_auc": 0.6763132306674189,
+          "pr_auc": 0.2145605438957596,
+          "brier_score": 0.08377361930108887,
+          "log_loss": 0.3384380080347874,
+          "ece_10": 0.037452080747625814
+        },
+        "oot_metrics": {
+          "roc_auc": 0.7288850703394171,
+          "pr_auc": 0.1466031288699291,
+          "brier_score": 0.05676018765082885,
+          "log_loss": 0.2152745636541514,
+          "ece_10": 0.014366618586392882
+        },
+        "oot_reliability_bins": [
+          {
+            "bin_index": 0,
+            "lower_bound": 0.0,
+            "upper_bound": 0.1,
+            "sample_count": 19451,
+            "mean_predicted": 0.04592940221633199,
+            "empirical_rate": 0.04215721556732302
+          },
+          {
+            "bin_index": 1,
+            "lower_bound": 0.1,
+            "upper_bound": 0.2,
+            "sample_count": 4297,
+            "mean_predicted": 0.13677312538769262,
+            "empirical_rate": 0.11054223877123574
+          },
+          {
+            "bin_index": 2,
+            "lower_bound": 0.2,
+            "upper_bound": 0.30000000000000004,
+            "sample_count": 1089,
+            "mean_predicted": 0.2401074716153605,
+            "empirical_rate": 0.13957759412304868
+          },
+          {
+            "bin_index": 3,
+            "lower_bound": 0.30000000000000004,
+            "upper_bound": 0.4,
+            "sample_count": 368,
+            "mean_predicted": 0.340536042510322,
+            "empirical_rate": 0.21739130434782608
+          },
+          {
+            "bin_index": 4,
+            "lower_bound": 0.4,
+            "upper_bound": 0.5,
+            "sample_count": 103,
+            "mean_predicted": 0.44559964389066076,
+            "empirical_rate": 0.30097087378640774
+          },
+          {
+            "bin_index": 5,
+            "lower_bound": 0.5,
+            "upper_bound": 0.6000000000000001,
+            "sample_count": 33,
+            "mean_predicted": 0.536153276403766,
+            "empirical_rate": 0.3939393939393939
+          },
+          {
+            "bin_index": 6,
+            "lower_bound": 0.6000000000000001,
+            "upper_bound": 0.7000000000000001,
+            "sample_count": 7,
+            "mean_predicted": 0.6593073704958121,
+            "empirical_rate": 0.5714285714285714
+          },
+          {
+            "bin_index": 7,
+            "lower_bound": 0.7000000000000001,
+            "upper_bound": 0.8,
+            "sample_count": 3,
+            "mean_predicted": 0.7504481021328814,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 8,
+            "lower_bound": 0.8,
+            "upper_bound": 0.9,
+            "sample_count": 1,
+            "mean_predicted": 0.884974526585873,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 9,
+            "lower_bound": 0.9,
+            "upper_bound": 1.0,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          }
+        ]
+      },
+      {
+        "regime": "pre_dispatch_clean",
+        "model_name": "logistic_regression",
+        "calibration_method": "isotonic",
+        "cv_metrics": {
+          "roc_auc": 0.6586630332663316,
+          "pr_auc": 0.18551996564061918,
+          "brier_score": 0.08511690386801114,
+          "log_loss": 0.3538779227311104,
+          "ece_10": 0.028725913417269086
+        },
+        "oot_metrics": {
+          "roc_auc": 0.726864470199626,
+          "pr_auc": 0.14085744727036023,
+          "brier_score": 0.059878777110941535,
+          "log_loss": 0.2323580007088983,
+          "ece_10": 0.05247251732512396
+        },
+        "oot_reliability_bins": [
+          {
+            "bin_index": 0,
+            "lower_bound": 0.0,
+            "upper_bound": 0.1,
+            "sample_count": 14886,
+            "mean_predicted": 0.06590837273227325,
+            "empirical_rate": 0.028012898024989925
+          },
+          {
+            "bin_index": 1,
+            "lower_bound": 0.1,
+            "upper_bound": 0.2,
+            "sample_count": 6797,
+            "mean_predicted": 0.13184980143294614,
+            "empirical_rate": 0.09268795056642637
+          },
+          {
+            "bin_index": 2,
+            "lower_bound": 0.2,
+            "upper_bound": 0.30000000000000004,
+            "sample_count": 2703,
+            "mean_predicted": 0.24444778738468148,
+            "empirical_rate": 0.11912689604143545
+          },
+          {
+            "bin_index": 3,
+            "lower_bound": 0.30000000000000004,
+            "upper_bound": 0.4,
+            "sample_count": 594,
+            "mean_predicted": 0.35033296856538126,
+            "empirical_rate": 0.17676767676767677
+          },
+          {
+            "bin_index": 4,
+            "lower_bound": 0.4,
+            "upper_bound": 0.5,
+            "sample_count": 338,
+            "mean_predicted": 0.40317755372158204,
+            "empirical_rate": 0.25443786982248523
+          },
+          {
+            "bin_index": 5,
+            "lower_bound": 0.5,
+            "upper_bound": 0.6000000000000001,
+            "sample_count": 1,
+            "mean_predicted": 0.5568233961551531,
+            "empirical_rate": 1.0
+          },
+          {
+            "bin_index": 6,
+            "lower_bound": 0.6000000000000001,
+            "upper_bound": 0.7000000000000001,
+            "sample_count": 32,
+            "mean_predicted": 0.6433382182941172,
+            "empirical_rate": 0.4375
+          },
+          {
+            "bin_index": 7,
+            "lower_bound": 0.7000000000000001,
+            "upper_bound": 0.8,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 8,
+            "lower_bound": 0.8,
+            "upper_bound": 0.9,
+            "sample_count": 1,
+            "mean_predicted": 0.8439570184063457,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 9,
+            "lower_bound": 0.9,
+            "upper_bound": 1.0,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          }
+        ]
+      },
+      {
+        "regime": "pre_dispatch_clean",
+        "model_name": "hist_gradient_boosting",
+        "calibration_method": "raw",
+        "cv_metrics": {
+          "roc_auc": 0.6700802139375784,
+          "pr_auc": 0.2046268239061529,
+          "brier_score": 0.08428699660391828,
+          "log_loss": 0.3092435289202948,
+          "ece_10": 0.0328179503644461
+        },
+        "oot_metrics": {
+          "roc_auc": 0.7238066799247773,
+          "pr_auc": 0.12346092028241454,
+          "brier_score": 0.0574705639118023,
+          "log_loss": 0.2182170053328428,
+          "ece_10": 0.009929914346433349
+        },
+        "oot_reliability_bins": [
+          {
+            "bin_index": 0,
+            "lower_bound": 0.0,
+            "upper_bound": 0.1,
+            "sample_count": 21242,
+            "mean_predicted": 0.043633078841519735,
+            "empirical_rate": 0.04773561811505508
+          },
+          {
+            "bin_index": 1,
+            "lower_bound": 0.1,
+            "upper_bound": 0.2,
+            "sample_count": 2972,
+            "mean_predicted": 0.13597507818075227,
+            "empirical_rate": 0.13458950201884254
+          },
+          {
+            "bin_index": 2,
+            "lower_bound": 0.2,
+            "upper_bound": 0.30000000000000004,
+            "sample_count": 792,
+            "mean_predicted": 0.2437450737771155,
+            "empirical_rate": 0.14646464646464646
+          },
+          {
+            "bin_index": 3,
+            "lower_bound": 0.30000000000000004,
+            "upper_bound": 0.4,
+            "sample_count": 256,
+            "mean_predicted": 0.33766343711867786,
+            "empirical_rate": 0.109375
+          },
+          {
+            "bin_index": 4,
+            "lower_bound": 0.4,
+            "upper_bound": 0.5,
+            "sample_count": 68,
+            "mean_predicted": 0.43988704101881027,
+            "empirical_rate": 0.17647058823529413
+          },
+          {
+            "bin_index": 5,
+            "lower_bound": 0.5,
+            "upper_bound": 0.6000000000000001,
+            "sample_count": 20,
+            "mean_predicted": 0.5397190047538984,
+            "empirical_rate": 0.2
+          },
+          {
+            "bin_index": 6,
+            "lower_bound": 0.6000000000000001,
+            "upper_bound": 0.7000000000000001,
+            "sample_count": 2,
+            "mean_predicted": 0.642239845465366,
+            "empirical_rate": 0.5
+          },
+          {
+            "bin_index": 7,
+            "lower_bound": 0.7000000000000001,
+            "upper_bound": 0.8,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 8,
+            "lower_bound": 0.8,
+            "upper_bound": 0.9,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 9,
+            "lower_bound": 0.9,
+            "upper_bound": 1.0,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          }
+        ]
+      },
+      {
+        "regime": "pre_dispatch_clean",
+        "model_name": "hist_gradient_boosting",
+        "calibration_method": "isotonic",
+        "cv_metrics": {
+          "roc_auc": 0.6435214015373287,
+          "pr_auc": 0.1734759453855898,
+          "brier_score": 0.08794103816614267,
+          "log_loss": 0.347964127376766,
+          "ece_10": 0.033673383640582734
+        },
+        "oot_metrics": {
+          "roc_auc": 0.7220296525053221,
+          "pr_auc": 0.11875636957543023,
+          "brier_score": 0.05748872601961153,
+          "log_loss": 0.2240243690182383,
+          "ece_10": 0.030431052848378586
+        },
+        "oot_reliability_bins": [
+          {
+            "bin_index": 0,
+            "lower_bound": 0.0,
+            "upper_bound": 0.1,
+            "sample_count": 13523,
+            "mean_predicted": 0.05818939788424897,
+            "empirical_rate": 0.02432892109738963
+          },
+          {
+            "bin_index": 1,
+            "lower_bound": 0.1,
+            "upper_bound": 0.2,
+            "sample_count": 10769,
+            "mean_predicted": 0.12167590123389413,
+            "empirical_rate": 0.10195932769987928
+          },
+          {
+            "bin_index": 2,
+            "lower_bound": 0.2,
+            "upper_bound": 0.30000000000000004,
+            "sample_count": 1001,
+            "mean_predicted": 0.226753256783607,
+            "empirical_rate": 0.13686313686313686
+          },
+          {
+            "bin_index": 3,
+            "lower_bound": 0.30000000000000004,
+            "upper_bound": 0.4,
+            "sample_count": 50,
+            "mean_predicted": 0.35554746679424004,
+            "empirical_rate": 0.2
+          },
+          {
+            "bin_index": 4,
+            "lower_bound": 0.4,
+            "upper_bound": 0.5,
+            "sample_count": 7,
+            "mean_predicted": 0.49565217391304334,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 5,
+            "lower_bound": 0.5,
+            "upper_bound": 0.6000000000000001,
+            "sample_count": 2,
+            "mean_predicted": 0.5190476190476191,
+            "empirical_rate": 0.5
+          },
+          {
+            "bin_index": 6,
+            "lower_bound": 0.6000000000000001,
+            "upper_bound": 0.7000000000000001,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 7,
+            "lower_bound": 0.7000000000000001,
+            "upper_bound": 0.8,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 8,
+            "lower_bound": 0.8,
+            "upper_bound": 0.9,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 9,
+            "lower_bound": 0.9,
+            "upper_bound": 1.0,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          }
+        ]
+      },
+      {
+        "regime": "pre_dispatch_clean",
+        "model_name": "lightgbm",
+        "calibration_method": "raw",
+        "cv_metrics": {
+          "roc_auc": 0.6880555709473191,
+          "pr_auc": 0.21032423519048393,
+          "brier_score": 0.08468501652235877,
+          "log_loss": 0.320280632787753,
+          "ece_10": 0.042101844052561246
+        },
+        "oot_metrics": {
+          "roc_auc": 0.7345896628127354,
+          "pr_auc": 0.1290911291474156,
+          "brier_score": 0.05740607378874265,
+          "log_loss": 0.216173516711965,
+          "ece_10": 0.009331374530308544
+        },
+        "oot_reliability_bins": [
+          {
+            "bin_index": 0,
+            "lower_bound": 0.0,
+            "upper_bound": 0.1,
+            "sample_count": 20673,
+            "mean_predicted": 0.04083967400036876,
+            "empirical_rate": 0.04397039616891598
+          },
+          {
+            "bin_index": 1,
+            "lower_bound": 0.1,
+            "upper_bound": 0.2,
+            "sample_count": 3427,
+            "mean_predicted": 0.13834457955869217,
+            "empirical_rate": 0.13802159323023053
+          },
+          {
+            "bin_index": 2,
+            "lower_bound": 0.2,
+            "upper_bound": 0.30000000000000004,
+            "sample_count": 843,
+            "mean_predicted": 0.23945022803410598,
+            "empirical_rate": 0.1494661921708185
+          },
+          {
+            "bin_index": 3,
+            "lower_bound": 0.30000000000000004,
+            "upper_bound": 0.4,
+            "sample_count": 263,
+            "mean_predicted": 0.3429593115408792,
+            "empirical_rate": 0.18250950570342206
+          },
+          {
+            "bin_index": 4,
+            "lower_bound": 0.4,
+            "upper_bound": 0.5,
+            "sample_count": 89,
+            "mean_predicted": 0.4435760202481139,
+            "empirical_rate": 0.12359550561797752
+          },
+          {
+            "bin_index": 5,
+            "lower_bound": 0.5,
+            "upper_bound": 0.6000000000000001,
+            "sample_count": 42,
+            "mean_predicted": 0.5381688760948462,
+            "empirical_rate": 0.16666666666666666
+          },
+          {
+            "bin_index": 6,
+            "lower_bound": 0.6000000000000001,
+            "upper_bound": 0.7000000000000001,
+            "sample_count": 15,
+            "mean_predicted": 0.6403009192199475,
+            "empirical_rate": 0.06666666666666667
+          },
+          {
+            "bin_index": 7,
+            "lower_bound": 0.7000000000000001,
+            "upper_bound": 0.8,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 8,
+            "lower_bound": 0.8,
+            "upper_bound": 0.9,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 9,
+            "lower_bound": 0.9,
+            "upper_bound": 1.0,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          }
+        ]
+      },
+      {
+        "regime": "pre_dispatch_clean",
+        "model_name": "lightgbm",
+        "calibration_method": "isotonic",
+        "cv_metrics": {
+          "roc_auc": 0.6588434512885305,
+          "pr_auc": 0.18462507416904564,
+          "brier_score": 0.08554215591494532,
+          "log_loss": 0.3068309190771752,
+          "ece_10": 0.025891367246073653
+        },
+        "oot_metrics": {
+          "roc_auc": 0.7340866690565979,
+          "pr_auc": 0.12615401769555207,
+          "brier_score": 0.05820554253489237,
+          "log_loss": 0.22965238698091542,
+          "ece_10": 0.04287444161268896
+        },
+        "oot_reliability_bins": [
+          {
+            "bin_index": 0,
+            "lower_bound": 0.0,
+            "upper_bound": 0.1,
+            "sample_count": 14592,
+            "mean_predicted": 0.07499885507881351,
+            "empirical_rate": 0.025561951754385966
+          },
+          {
+            "bin_index": 1,
+            "lower_bound": 0.1,
+            "upper_bound": 0.2,
+            "sample_count": 10016,
+            "mean_predicted": 0.13683098943549032,
+            "empirical_rate": 0.10822683706070288
+          },
+          {
+            "bin_index": 2,
+            "lower_bound": 0.2,
+            "upper_bound": 0.30000000000000004,
+            "sample_count": 651,
+            "mean_predicted": 0.24630346759399446,
+            "empirical_rate": 0.1597542242703533
+          },
+          {
+            "bin_index": 3,
+            "lower_bound": 0.30000000000000004,
+            "upper_bound": 0.4,
+            "sample_count": 69,
+            "mean_predicted": 0.3345906955198199,
+            "empirical_rate": 0.13043478260869565
+          },
+          {
+            "bin_index": 4,
+            "lower_bound": 0.4,
+            "upper_bound": 0.5,
+            "sample_count": 10,
+            "mean_predicted": 0.4179770741806797,
+            "empirical_rate": 0.5
+          },
+          {
+            "bin_index": 5,
+            "lower_bound": 0.5,
+            "upper_bound": 0.6000000000000001,
+            "sample_count": 14,
+            "mean_predicted": 0.5585582583015449,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 6,
+            "lower_bound": 0.6000000000000001,
+            "upper_bound": 0.7000000000000001,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 7,
+            "lower_bound": 0.7000000000000001,
+            "upper_bound": 0.8,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 8,
+            "lower_bound": 0.8,
+            "upper_bound": 0.9,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 9,
+            "lower_bound": 0.9,
+            "upper_bound": 1.0,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          }
+        ]
+      },
+      {
+        "regime": "post_carrier_leaky",
+        "model_name": "lightgbm",
+        "calibration_method": "raw",
+        "cv_metrics": {
+          "roc_auc": 0.75281863184539,
+          "pr_auc": 0.34315848808629457,
+          "brier_score": 0.07723038088125626,
+          "log_loss": 0.2975387754963999,
+          "ece_10": 0.04019516094753778
+        },
+        "oot_metrics": {
+          "roc_auc": 0.8456033875607414,
+          "pr_auc": 0.45281626843775036,
+          "brier_score": 0.044096527483560494,
+          "log_loss": 0.1687523753764567,
+          "ece_10": 0.011485497846399092
+        },
+        "oot_reliability_bins": [
+          {
+            "bin_index": 0,
+            "lower_bound": 0.0,
+            "upper_bound": 0.1,
+            "sample_count": 20729,
+            "mean_predicted": 0.031906862900286125,
+            "empirical_rate": 0.026050460707221768
+          },
+          {
+            "bin_index": 1,
+            "lower_bound": 0.1,
+            "upper_bound": 0.2,
+            "sample_count": 2662,
+            "mean_predicted": 0.13998005339764089,
+            "empirical_rate": 0.11419984973703982
+          },
+          {
+            "bin_index": 2,
+            "lower_bound": 0.2,
+            "upper_bound": 0.30000000000000004,
+            "sample_count": 890,
+            "mean_predicted": 0.24306214369208276,
+            "empirical_rate": 0.20112359550561798
+          },
+          {
+            "bin_index": 3,
+            "lower_bound": 0.30000000000000004,
+            "upper_bound": 0.4,
+            "sample_count": 439,
+            "mean_predicted": 0.3425079617774745,
+            "empirical_rate": 0.3052391799544419
+          },
+          {
+            "bin_index": 4,
+            "lower_bound": 0.4,
+            "upper_bound": 0.5,
+            "sample_count": 200,
+            "mean_predicted": 0.44195100099313633,
+            "empirical_rate": 0.355
+          },
+          {
+            "bin_index": 5,
+            "lower_bound": 0.5,
+            "upper_bound": 0.6000000000000001,
+            "sample_count": 99,
+            "mean_predicted": 0.5454800016760506,
+            "empirical_rate": 0.46464646464646464
+          },
+          {
+            "bin_index": 6,
+            "lower_bound": 0.6000000000000001,
+            "upper_bound": 0.7000000000000001,
+            "sample_count": 54,
+            "mean_predicted": 0.6446875227466257,
+            "empirical_rate": 0.5185185185185185
+          },
+          {
+            "bin_index": 7,
+            "lower_bound": 0.7000000000000001,
+            "upper_bound": 0.8,
+            "sample_count": 29,
+            "mean_predicted": 0.7477157786239661,
+            "empirical_rate": 0.8275862068965517
+          },
+          {
+            "bin_index": 8,
+            "lower_bound": 0.8,
+            "upper_bound": 0.9,
+            "sample_count": 42,
+            "mean_predicted": 0.8572887774504775,
+            "empirical_rate": 0.9761904761904762
+          },
+          {
+            "bin_index": 9,
+            "lower_bound": 0.9,
+            "upper_bound": 1.0,
+            "sample_count": 208,
+            "mean_predicted": 0.961760506099833,
+            "empirical_rate": 1.0
+          }
+        ]
+      },
+      {
+        "regime": "post_carrier_leaky",
+        "model_name": "lightgbm",
+        "calibration_method": "isotonic",
+        "cv_metrics": {
+          "roc_auc": 0.7273136356265185,
+          "pr_auc": 0.311624429919453,
+          "brier_score": 0.07904731109790741,
+          "log_loss": 0.2828347334638462,
+          "ece_10": 0.02495300090126608
+        },
+        "oot_metrics": {
+          "roc_auc": 0.8451177107929432,
+          "pr_auc": 0.43759702658268046,
+          "brier_score": 0.046860021425621526,
+          "log_loss": 0.19266097462958856,
+          "ece_10": 0.051634776062914146
+        },
+        "oot_reliability_bins": [
+          {
+            "bin_index": 0,
+            "lower_bound": 0.0,
+            "upper_bound": 0.1,
+            "sample_count": 13747,
+            "mean_predicted": 0.06150995612937894,
+            "empirical_rate": 0.013748454208190878
+          },
+          {
+            "bin_index": 1,
+            "lower_bound": 0.1,
+            "upper_bound": 0.2,
+            "sample_count": 8946,
+            "mean_predicted": 0.12623980960766948,
+            "empirical_rate": 0.06293315448245025
+          },
+          {
+            "bin_index": 2,
+            "lower_bound": 0.2,
+            "upper_bound": 0.30000000000000004,
+            "sample_count": 2027,
+            "mean_predicted": 0.23174786672126443,
+            "empirical_rate": 0.19980266403552047
+          },
+          {
+            "bin_index": 3,
+            "lower_bound": 0.30000000000000004,
+            "upper_bound": 0.4,
+            "sample_count": 91,
+            "mean_predicted": 0.38184200710736566,
+            "empirical_rate": 0.3626373626373626
+          },
+          {
+            "bin_index": 4,
+            "lower_bound": 0.4,
+            "upper_bound": 0.5,
+            "sample_count": 210,
+            "mean_predicted": 0.4200868759782829,
+            "empirical_rate": 0.4
+          },
+          {
+            "bin_index": 5,
+            "lower_bound": 0.5,
+            "upper_bound": 0.6000000000000001,
+            "sample_count": 57,
+            "mean_predicted": 0.5606608568667576,
+            "empirical_rate": 0.5614035087719298
+          },
+          {
+            "bin_index": 6,
+            "lower_bound": 0.6000000000000001,
+            "upper_bound": 0.7000000000000001,
+            "sample_count": 0,
+            "mean_predicted": 0.0,
+            "empirical_rate": 0.0
+          },
+          {
+            "bin_index": 7,
+            "lower_bound": 0.7000000000000001,
+            "upper_bound": 0.8,
+            "sample_count": 69,
+            "mean_predicted": 0.7356419484567251,
+            "empirical_rate": 0.927536231884058
+          },
+          {
+            "bin_index": 8,
+            "lower_bound": 0.8,
+            "upper_bound": 0.9,
+            "sample_count": 5,
+            "mean_predicted": 0.8,
+            "empirical_rate": 1.0
+          },
+          {
+            "bin_index": 9,
+            "lower_bound": 0.9,
+            "upper_bound": 1.0,
+            "sample_count": 200,
+            "mean_predicted": 0.9943784503753881,
+            "empirical_rate": 1.0
+          }
+        ]
+      }
+    ]
+  },
+  "shap_drivers": {
+    "sample_size": 4000,
+    "drivers": [
+      {
+        "feature_name": "promised_lead_days",
+        "mean_abs_shap": 0.670458591137745,
+        "direction_corr": -0.9689620032998075
+      },
+      {
+        "feature_name": "purchase_month",
+        "mean_abs_shap": 0.5167821261958409,
+        "direction_corr": 0.13572267322772377
+      },
+      {
+        "feature_name": "distance_km",
+        "mean_abs_shap": 0.18815132490795955,
+        "direction_corr": 0.9200968768788563
+      },
+      {
+        "feature_name": "customer_state_SP",
+        "mean_abs_shap": 0.14841580730179346,
+        "direction_corr": -0.9537449327553257
+      },
+      {
+        "feature_name": "seller_past_avg_delay_days",
+        "mean_abs_shap": 0.12891501204669933,
+        "direction_corr": 0.6833654420218407
+      },
+      {
+        "feature_name": "total_freight",
+        "mean_abs_shap": 0.12444432996958815,
+        "direction_corr": 0.47208298676794597
+      },
+      {
+        "feature_name": "customer_state_MG",
+        "mean_abs_shap": 0.10330015084302584,
+        "direction_corr": -0.9684347029343634
+      },
+      {
+        "feature_name": "is_same_state",
+        "mean_abs_shap": 0.10004872961189083,
+        "direction_corr": -0.9569369693153954
+      },
+      {
+        "feature_name": "approval_lag_hours",
+        "mean_abs_shap": 0.09431788913337842,
+        "direction_corr": 0.8009530328113516
+      },
+      {
+        "feature_name": "shipping_limit_lead_days",
+        "mean_abs_shap": 0.09227527854483938,
+        "direction_corr": 0.7745307614804271
+      },
+      {
+        "feature_name": "seller_past_late_rate",
+        "mean_abs_shap": 0.07838675723729259,
+        "direction_corr": 0.7773988818999658
+      },
+      {
+        "feature_name": "seller_prior_order_count",
+        "mean_abs_shap": 0.07829006914158168,
+        "direction_corr": 0.29036374794581093
+      },
+      {
+        "feature_name": "customer_state_RJ",
+        "mean_abs_shap": 0.06784002174660016,
+        "direction_corr": 0.962083603410674
+      },
+      {
+        "feature_name": "seller_prior_resolved_count",
+        "mean_abs_shap": 0.06262829377077885,
+        "direction_corr": -0.6944730431786009
+      },
+      {
+        "feature_name": "product_description_length",
+        "mean_abs_shap": 0.05420232150993978,
+        "direction_corr": -0.396886288697063
+      }
+    ]
+  },
+  "causal_review_impact": {
+    "sample_size": 95824,
+    "bootstrap_replicates": 120,
+    "confounders_used": [
+      "log_total_price",
+      "freight_ratio",
+      "distance_km",
+      "promised_lead_days",
+      "item_count",
+      "is_same_state",
+      "customer_state_top8",
+      "product_category_top10",
+      "purchase_quarter"
+    ],
+    "buckets": [
+      {
+        "bucket_label": "0d (On-Time)",
+        "sample_count": 88163,
+        "mean_review_score": 4.294522645554258,
+        "unadjusted_one_star_rate": 0.06584394814151061,
+        "adjusted_one_star_rate": 0.06590936242038481,
+        "adjusted_rate_ci_low": 0.06428449759176914,
+        "adjusted_rate_ci_high": 0.06744640837095175,
+        "risk_diff_vs_ontime": 0.0,
+        "risk_diff_ci_low": 0.0,
+        "risk_diff_ci_high": 0.0,
+        "ipw_one_star_rate": 0.06574204420194442
+      },
+      {
+        "bucket_label": "1-3d Late",
+        "sample_count": 2636,
+        "mean_review_score": 3.7678300455235205,
+        "unadjusted_one_star_rate": 0.13770864946889227,
+        "adjusted_one_star_rate": 0.14374932650242855,
+        "adjusted_rate_ci_low": 0.13311369789506017,
+        "adjusted_rate_ci_high": 0.158776340753675,
+        "risk_diff_vs_ontime": 0.07783996408204374,
+        "risk_diff_ci_low": 0.06633980565591586,
+        "risk_diff_ci_high": 0.0932095356305111,
+        "ipw_one_star_rate": 0.1665714835097483
+      },
+      {
+        "bucket_label": "4-7d Late",
+        "sample_count": 1773,
+        "mean_review_score": 2.3164128595600677,
+        "unadjusted_one_star_rate": 0.530174844895657,
+        "adjusted_one_star_rate": 0.5274467919197824,
+        "adjusted_rate_ci_low": 0.5074725217945415,
+        "adjusted_rate_ci_high": 0.546298240879245,
+        "risk_diff_vs_ontime": 0.4615374294993976,
+        "risk_diff_ci_low": 0.44111247361782024,
+        "risk_diff_ci_high": 0.47984274078008715,
+        "ipw_one_star_rate": 0.5207474313279878
+      },
+      {
+        "bucket_label": ">7d Late",
+        "sample_count": 3252,
+        "mean_review_score": 1.7318573185731858,
+        "unadjusted_one_star_rate": 0.6863468634686347,
+        "adjusted_one_star_rate": 0.6672044790877817,
+        "adjusted_rate_ci_low": 0.6518286467099669,
+        "adjusted_rate_ci_high": 0.6834913935203493,
+        "risk_diff_vs_ontime": 0.6012951166673969,
+        "risk_diff_ci_low": 0.5853819261097098,
+        "risk_diff_ci_high": 0.617009773171538,
+        "ipw_one_star_rate": 0.6370856309507538
+      }
+    ]
+  },
+  "sla_policy": {
+    "cost_ratio_fn_to_fp": 8.0,
+    "proactive_cost": 10.0,
+    "unmitigated_loss": 80.0,
+    "theoretical_bayes_threshold": 0.125,
+    "no_action_cost_per_order": 4.970022088987062,
+    "default_policy": {
+      "threshold": 0.5,
+      "recall": 0.0,
+      "precision": 0.0,
+      "specificity": 0.999411195693317,
+      "flagged_rate": 0.000552224676554118,
+      "expected_cost_per_order": 4.975544335752604,
+      "cost_per_10k_orders": 49755.443357526034,
+      "savings_vs_no_action_per_10k": -55.22246765541361
+    },
+    "bayes_policy": {
+      "threshold": 0.125,
+      "recall": 0.6355555555555555,
+      "precision": 0.12597533350113266,
+      "specificity": 0.7079110064347899,
+      "flagged_rate": 0.3134269485642158,
+      "expected_cost_per_order": 4.945566424739665,
+      "cost_per_10k_orders": 49455.66424739665,
+      "savings_vs_no_action_per_10k": 244.55664247397203
+    },
+    "empirical_optimal_policy": {
+      "threshold": 0.13,
+      "recall": 0.48,
+      "precision": 0.13948339483394834,
+      "specificity": 0.80384405097363,
+      "flagged_rate": 0.2137898390659514,
+      "expected_cost_per_order": 4.722309876932786,
+      "cost_per_10k_orders": 47223.09876932786,
+      "savings_vs_no_action_per_10k": 2477.122120542763
+    },
+    "sweep": [
+      {
+        "threshold": 0.02,
+        "recall": 1.0,
+        "precision": 0.06212527611233828,
+        "specificity": 0.0,
+        "flagged_rate": 1.0,
+        "expected_cost_per_order": 10.0,
+        "cost_per_10k_orders": 100000.0,
+        "savings_vs_no_action_per_10k": -50299.77911012938
+      },
+      {
+        "threshold": 0.03,
+        "recall": 1.0,
+        "precision": 0.06216941659430015,
+        "specificity": 0.0007570341085923371,
+        "flagged_rate": 0.9992899968444304,
+        "expected_cost_per_order": 9.992899968444304,
+        "cost_per_10k_orders": 99928.99968444304,
+        "savings_vs_no_action_per_10k": -50228.77879457241
+      },
+      {
+        "threshold": 0.04,
+        "recall": 0.9993650793650793,
+        "precision": 0.06385395537525355,
+        "specificity": 0.029482272784623797,
+        "flagged_rate": 0.9723098769327864,
+        "expected_cost_per_order": 9.726254338908173,
+        "cost_per_10k_orders": 97262.54338908174,
+        "savings_vs_no_action_per_10k": -47562.32249921111
+      },
+      {
+        "threshold": 0.05,
+        "recall": 0.9993650793650793,
+        "precision": 0.06451348471186162,
+        "specificity": 0.040080750304916514,
+        "flagged_rate": 0.9623698327548122,
+        "expected_cost_per_order": 9.626853897128433,
+        "cost_per_10k_orders": 96268.53897128433,
+        "savings_vs_no_action_per_10k": -46568.3180814137
+      },
+      {
+        "threshold": 0.06,
+        "recall": 0.9726984126984127,
+        "precision": 0.07413142359430949,
+        "specificity": 0.19527274256634564,
+        "flagged_rate": 0.815162511833386,
+        "expected_cost_per_order": 8.287314610287156,
+        "cost_per_10k_orders": 82873.14610287156,
+        "savings_vs_no_action_per_10k": -33172.92521300094
+      },
+      {
+        "threshold": 0.07,
+        "recall": 0.9657142857142857,
+        "precision": 0.07746765814403586,
+        "specificity": 0.23821339950372208,
+        "flagged_rate": 0.7744556642473966,
+        "expected_cost_per_order": 7.914957399810666,
+        "cost_per_10k_orders": 79149.57399810666,
+        "savings_vs_no_action_per_10k": -29449.353108236035
+      },
+      {
+        "threshold": 0.08,
+        "recall": 0.933968253968254,
+        "precision": 0.08601836149932753,
+        "specificity": 0.34264204903898726,
+        "flagged_rate": 0.6745424424108551,
+        "expected_cost_per_order": 7.073603660460713,
+        "cost_per_10k_orders": 70736.03660460713,
+        "savings_vs_no_action_per_10k": -21035.81571473651
+      },
+      {
+        "threshold": 0.09,
+        "recall": 0.9238095238095239,
+        "precision": 0.0887682264657434,
+        "specificity": 0.37182991967026957,
+        "flagged_rate": 0.6465367623856106,
+        "expected_cost_per_order": 6.844035973493216,
+        "cost_per_10k_orders": 68440.35973493215,
+        "savings_vs_no_action_per_10k": -18740.138845061534
+      },
+      {
+        "threshold": 0.1,
+        "recall": 0.7631746031746032,
+        "precision": 0.1117100371747212,
+        "specificity": 0.598014888337469,
+        "flagged_rate": 0.42442410855159357,
+        "expected_cost_per_order": 5.421268538971284,
+        "cost_per_10k_orders": 54212.68538971284,
+        "savings_vs_no_action_per_10k": -4512.464499842217
+      },
+      {
+        "threshold": 0.11,
+        "recall": 0.7631746031746032,
+        "precision": 0.1117100371747212,
+        "specificity": 0.598014888337469,
+        "flagged_rate": 0.42442410855159357,
+        "expected_cost_per_order": 5.421268538971284,
+        "cost_per_10k_orders": 54212.68538971284,
+        "savings_vs_no_action_per_10k": -4512.464499842217
+      },
+      {
+        "threshold": 0.12,
+        "recall": 0.7403174603174603,
+        "precision": 0.11613545816733067,
+        "specificity": 0.6267821844639778,
+        "flagged_rate": 0.39602398232881036,
+        "expected_cost_per_order": 5.250867781634585,
+        "cost_per_10k_orders": 52508.67781634585,
+        "savings_vs_no_action_per_10k": -2808.4569264752267
+      },
+      {
+        "threshold": 0.13,
+        "recall": 0.48,
+        "precision": 0.13948339483394834,
+        "specificity": 0.80384405097363,
+        "flagged_rate": 0.2137898390659514,
+        "expected_cost_per_order": 4.722309876932786,
+        "cost_per_10k_orders": 47223.09876932786,
+        "savings_vs_no_action_per_10k": 2477.122120542763
+      },
+      {
+        "threshold": 0.14,
+        "recall": 0.3441269841269841,
+        "precision": 0.14558152027934462,
+        "specificity": 0.8662152500315431,
+        "flagged_rate": 0.14685231934364154,
+        "expected_cost_per_order": 4.728226569895866,
+        "cost_per_10k_orders": 47282.26569895866,
+        "savings_vs_no_action_per_10k": 2417.9551909119646
+      },
+      {
+        "threshold": 0.15,
+        "recall": 0.3161904761904762,
+        "precision": 0.1416382252559727,
+        "specificity": 0.8730706144593515,
+        "flagged_rate": 0.13868728305459135,
+        "expected_cost_per_order": 4.785421268538971,
+        "cost_per_10k_orders": 47854.21268538971,
+        "savings_vs_no_action_per_10k": 1846.0082044809135
+      },
+      {
+        "threshold": 0.16,
+        "recall": 0.20253968253968255,
+        "precision": 0.1480278422273782,
+        "specificity": 0.9227825209235816,
+        "flagged_rate": 0.08500315556958031,
+        "expected_cost_per_order": 4.813426948564216,
+        "cost_per_10k_orders": 48134.269485642166,
+        "savings_vs_no_action_per_10k": 1565.9514042284607
+      },
+      {
+        "threshold": 0.17,
+        "recall": 0.12126984126984126,
+        "precision": 0.1535369774919614,
+        "specificity": 0.9557135046473483,
+        "flagged_rate": 0.04906910697380877,
+        "expected_cost_per_order": 4.857999368886084,
+        "cost_per_10k_orders": 48579.993688860835,
+        "savings_vs_no_action_per_10k": 1120.2272010097847
+      },
+      {
+        "threshold": 0.18,
+        "recall": 0.12126984126984126,
+        "precision": 0.1535369774919614,
+        "specificity": 0.9557135046473483,
+        "flagged_rate": 0.04906910697380877,
+        "expected_cost_per_order": 4.857999368886084,
+        "cost_per_10k_orders": 48579.993688860835,
+        "savings_vs_no_action_per_10k": 1120.2272010097847
+      },
+      {
+        "threshold": 0.19,
+        "recall": 0.07492063492063492,
+        "precision": 0.1586021505376344,
+        "specificity": 0.9736720360011776,
+        "flagged_rate": 0.029346797096875987,
+        "expected_cost_per_order": 4.891132849479331,
+        "cost_per_10k_orders": 48911.32849479331,
+        "savings_vs_no_action_per_10k": 788.8923950773119
+      },
+      {
+        "threshold": 0.2,
+        "recall": 0.07492063492063492,
+        "precision": 0.1586021505376344,
+        "specificity": 0.9736720360011776,
+        "flagged_rate": 0.029346797096875987,
+        "expected_cost_per_order": 4.891132849479331,
+        "cost_per_10k_orders": 48911.32849479331,
+        "savings_vs_no_action_per_10k": 788.8923950773119
+      },
+      {
+        "threshold": 0.21,
+        "recall": 0.07365079365079365,
+        "precision": 0.16133518776077885,
+        "specificity": 0.9746393573621567,
+        "flagged_rate": 0.028360681603029347,
+        "expected_cost_per_order": 4.887582833701483,
+        "cost_per_10k_orders": 48875.82833701483,
+        "savings_vs_no_action_per_10k": 824.3925528557927
+      },
+      {
+        "threshold": 0.22,
+        "recall": 0.04634920634920635,
+        "precision": 0.15732758620689655,
+        "specificity": 0.9835555368633554,
+        "flagged_rate": 0.018302303565793626,
+        "expected_cost_per_order": 4.922688545282424,
+        "cost_per_10k_orders": 49226.88545282424,
+        "savings_vs_no_action_per_10k": 473.33543704638714
+      },
+      {
+        "threshold": 0.23,
+        "recall": 0.04634920634920635,
+        "precision": 0.15732758620689655,
+        "specificity": 0.9835555368633554,
+        "flagged_rate": 0.018302303565793626,
+        "expected_cost_per_order": 4.922688545282424,
+        "cost_per_10k_orders": 49226.88545282424,
+        "savings_vs_no_action_per_10k": 473.33543704638714
+      },
+      {
+        "threshold": 0.24,
+        "recall": 0.044444444444444446,
+        "precision": 0.1580135440180587,
+        "specificity": 0.9843125709719477,
+        "flagged_rate": 0.01747396655096245,
+        "expected_cost_per_order": 4.923871883875039,
+        "cost_per_10k_orders": 49238.71883875039,
+        "savings_vs_no_action_per_10k": 461.5020511202328
+      },
+      {
+        "threshold": 0.25,
+        "recall": 0.0380952380952381,
+        "precision": 0.16853932584269662,
+        "specificity": 0.9875509946587038,
+        "flagged_rate": 0.014042284632376143,
+        "expected_cost_per_order": 4.921110760492269,
+        "cost_per_10k_orders": 49211.10760492269,
+        "savings_vs_no_action_per_10k": 489.11328494793514
+      },
+      {
+        "threshold": 0.26,
+        "recall": 0.0380952380952381,
+        "precision": 0.16901408450704225,
+        "specificity": 0.9875930521091811,
+        "flagged_rate": 0.014002840012622279,
+        "expected_cost_per_order": 4.92071631429473,
+        "cost_per_10k_orders": 49207.163142947305,
+        "savings_vs_no_action_per_10k": 493.05774692331994
+      },
+      {
+        "threshold": 0.27,
+        "recall": 0.0380952380952381,
+        "precision": 0.16901408450704225,
+        "specificity": 0.9875930521091811,
+        "flagged_rate": 0.014002840012622279,
+        "expected_cost_per_order": 4.92071631429473,
+        "cost_per_10k_orders": 49207.163142947305,
+        "savings_vs_no_action_per_10k": 493.05774692331994
+      },
+      {
+        "threshold": 0.28,
+        "recall": 0.0380952380952381,
+        "precision": 0.16901408450704225,
+        "specificity": 0.9875930521091811,
+        "flagged_rate": 0.014002840012622279,
+        "expected_cost_per_order": 4.92071631429473,
+        "cost_per_10k_orders": 49207.163142947305,
+        "savings_vs_no_action_per_10k": 493.05774692331994
+      },
+      {
+        "threshold": 0.29,
+        "recall": 0.008888888888888889,
+        "precision": 0.15053763440860216,
+        "specificity": 0.9966774614122892,
+        "flagged_rate": 0.0036683496371094984,
+        "expected_cost_per_order": 4.962527611233828,
+        "cost_per_10k_orders": 49625.27611233827,
+        "savings_vs_no_action_per_10k": 74.94477753234641
+      },
+      {
+        "threshold": 0.3,
+        "recall": 0.008888888888888889,
+        "precision": 0.15053763440860216,
+        "specificity": 0.9966774614122892,
+        "flagged_rate": 0.0036683496371094984,
+        "expected_cost_per_order": 4.962527611233828,
+        "cost_per_10k_orders": 49625.27611233827,
+        "savings_vs_no_action_per_10k": 74.94477753234641
+      },
+      {
+        "threshold": 0.31,
+        "recall": 0.005079365079365079,
+        "precision": 0.16,
+        "specificity": 0.9982335870799512,
+        "flagged_rate": 0.0019722309876932785,
+        "expected_cost_per_order": 4.964499842221521,
+        "cost_per_10k_orders": 49644.99842221521,
+        "savings_vs_no_action_per_10k": 55.22246765541361
+      },
+      {
+        "threshold": 0.32,
+        "recall": 0.005079365079365079,
+        "precision": 0.16,
+        "specificity": 0.9982335870799512,
+        "flagged_rate": 0.0019722309876932785,
+        "expected_cost_per_order": 4.964499842221521,
+        "cost_per_10k_orders": 49644.99842221521,
+        "savings_vs_no_action_per_10k": 55.22246765541361
+      },
+      {
+        "threshold": 0.33,
+        "recall": 0.005079365079365079,
+        "precision": 0.16,
+        "specificity": 0.9982335870799512,
+        "flagged_rate": 0.0019722309876932785,
+        "expected_cost_per_order": 4.964499842221521,
+        "cost_per_10k_orders": 49644.99842221521,
+        "savings_vs_no_action_per_10k": 55.22246765541361
+      },
+      {
+        "threshold": 0.34,
+        "recall": 0.005079365079365079,
+        "precision": 0.16,
+        "specificity": 0.9982335870799512,
+        "flagged_rate": 0.0019722309876932785,
+        "expected_cost_per_order": 4.964499842221521,
+        "cost_per_10k_orders": 49644.99842221521,
+        "savings_vs_no_action_per_10k": 55.22246765541361
+      },
+      {
+        "threshold": 0.35,
+        "recall": 0.005079365079365079,
+        "precision": 0.16,
+        "specificity": 0.9982335870799512,
+        "flagged_rate": 0.0019722309876932785,
+        "expected_cost_per_order": 4.964499842221521,
+        "cost_per_10k_orders": 49644.99842221521,
+        "savings_vs_no_action_per_10k": 55.22246765541361
+      },
+      {
+        "threshold": 0.36,
+        "recall": 0.005079365079365079,
+        "precision": 0.16,
+        "specificity": 0.9982335870799512,
+        "flagged_rate": 0.0019722309876932785,
+        "expected_cost_per_order": 4.964499842221521,
+        "cost_per_10k_orders": 49644.99842221521,
+        "savings_vs_no_action_per_10k": 55.22246765541361
+      },
+      {
+        "threshold": 0.37,
+        "recall": 0.005079365079365079,
+        "precision": 0.16,
+        "specificity": 0.9982335870799512,
+        "flagged_rate": 0.0019722309876932785,
+        "expected_cost_per_order": 4.964499842221521,
+        "cost_per_10k_orders": 49644.99842221521,
+        "savings_vs_no_action_per_10k": 55.22246765541361
+      },
+      {
+        "threshold": 0.38,
+        "recall": 0.0031746031746031746,
+        "precision": 0.20833333333333334,
+        "specificity": 0.9992009084409303,
+        "flagged_rate": 0.0009466708740927738,
+        "expected_cost_per_order": 4.963710949826444,
+        "cost_per_10k_orders": 49637.10949826444,
+        "savings_vs_no_action_per_10k": 63.111391606183176
+      },
+      {
+        "threshold": 0.39,
+        "recall": 0.0031746031746031746,
+        "precision": 0.20833333333333334,
+        "specificity": 0.9992009084409303,
+        "flagged_rate": 0.0009466708740927738,
+        "expected_cost_per_order": 4.963710949826444,
+        "cost_per_10k_orders": 49637.10949826444,
+        "savings_vs_no_action_per_10k": 63.111391606183176
+      },
+      {
+        "threshold": 0.4,
+        "recall": 0.0031746031746031746,
+        "precision": 0.20833333333333334,
+        "specificity": 0.9992009084409303,
+        "flagged_rate": 0.0009466708740927738,
+        "expected_cost_per_order": 4.963710949826444,
+        "cost_per_10k_orders": 49637.10949826444,
+        "savings_vs_no_action_per_10k": 63.111391606183176
+      },
+      {
+        "threshold": 0.41,
+        "recall": 0.0006349206349206349,
+        "precision": 0.0625,
+        "specificity": 0.9993691382428397,
+        "flagged_rate": 0.0006311139160618492,
+        "expected_cost_per_order": 4.973177658567371,
+        "cost_per_10k_orders": 49731.77658567371,
+        "savings_vs_no_action_per_10k": -31.555695803087147
+      },
+      {
+        "threshold": 0.42,
+        "recall": 0.0006349206349206349,
+        "precision": 0.0625,
+        "specificity": 0.9993691382428397,
+        "flagged_rate": 0.0006311139160618492,
+        "expected_cost_per_order": 4.973177658567371,
+        "cost_per_10k_orders": 49731.77658567371,
+        "savings_vs_no_action_per_10k": -31.555695803087147
+      },
+      {
+        "threshold": 0.43,
+        "recall": 0.0006349206349206349,
+        "precision": 0.0625,
+        "specificity": 0.9993691382428397,
+        "flagged_rate": 0.0006311139160618492,
+        "expected_cost_per_order": 4.973177658567371,
+        "cost_per_10k_orders": 49731.77658567371,
+        "savings_vs_no_action_per_10k": -31.555695803087147
+      },
+      {
+        "threshold": 0.44,
+        "recall": 0.0006349206349206349,
+        "precision": 0.0625,
+        "specificity": 0.9993691382428397,
+        "flagged_rate": 0.0006311139160618492,
+        "expected_cost_per_order": 4.973177658567371,
+        "cost_per_10k_orders": 49731.77658567371,
+        "savings_vs_no_action_per_10k": -31.555695803087147
+      },
+      {
+        "threshold": 0.45,
+        "recall": 0.0006349206349206349,
+        "precision": 0.0625,
+        "specificity": 0.9993691382428397,
+        "flagged_rate": 0.0006311139160618492,
+        "expected_cost_per_order": 4.973177658567371,
+        "cost_per_10k_orders": 49731.77658567371,
+        "savings_vs_no_action_per_10k": -31.555695803087147
+      },
+      {
+        "threshold": 0.46,
+        "recall": 0.0006349206349206349,
+        "precision": 0.0625,
+        "specificity": 0.9993691382428397,
+        "flagged_rate": 0.0006311139160618492,
+        "expected_cost_per_order": 4.973177658567371,
+        "cost_per_10k_orders": 49731.77658567371,
+        "savings_vs_no_action_per_10k": -31.555695803087147
+      },
+      {
+        "threshold": 0.47,
+        "recall": 0.0006349206349206349,
+        "precision": 0.06666666666666667,
+        "specificity": 0.999411195693317,
+        "flagged_rate": 0.0005916692963079835,
+        "expected_cost_per_order": 4.972783212369833,
+        "cost_per_10k_orders": 49727.832123698325,
+        "savings_vs_no_action_per_10k": -27.611233827702364
+      },
+      {
+        "threshold": 0.48,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 0.999411195693317,
+        "flagged_rate": 0.000552224676554118,
+        "expected_cost_per_order": 4.975544335752604,
+        "cost_per_10k_orders": 49755.443357526034,
+        "savings_vs_no_action_per_10k": -55.22246765541361
+      },
+      {
+        "threshold": 0.49,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 0.999411195693317,
+        "flagged_rate": 0.000552224676554118,
+        "expected_cost_per_order": 4.975544335752604,
+        "cost_per_10k_orders": 49755.443357526034,
+        "savings_vs_no_action_per_10k": -55.22246765541361
+      },
+      {
+        "threshold": 0.5,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 0.999411195693317,
+        "flagged_rate": 0.000552224676554118,
+        "expected_cost_per_order": 4.975544335752604,
+        "cost_per_10k_orders": 49755.443357526034,
+        "savings_vs_no_action_per_10k": -55.22246765541361
+      },
+      {
+        "threshold": 0.51,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 0.999411195693317,
+        "flagged_rate": 0.000552224676554118,
+        "expected_cost_per_order": 4.975544335752604,
+        "cost_per_10k_orders": 49755.443357526034,
+        "savings_vs_no_action_per_10k": -55.22246765541361
+      },
+      {
+        "threshold": 0.52,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 0.999411195693317,
+        "flagged_rate": 0.000552224676554118,
+        "expected_cost_per_order": 4.975544335752604,
+        "cost_per_10k_orders": 49755.443357526034,
+        "savings_vs_no_action_per_10k": -55.22246765541361
+      },
+      {
+        "threshold": 0.53,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 0.9994532531437944,
+        "flagged_rate": 0.0005127800568002524,
+        "expected_cost_per_order": 4.975149889555064,
+        "cost_per_10k_orders": 49751.49889555064,
+        "savings_vs_no_action_per_10k": -51.278005680019945
+      },
+      {
+        "threshold": 0.54,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 0.9994532531437944,
+        "flagged_rate": 0.0005127800568002524,
+        "expected_cost_per_order": 4.975149889555064,
+        "cost_per_10k_orders": 49751.49889555064,
+        "savings_vs_no_action_per_10k": -51.278005680019945
+      },
+      {
+        "threshold": 0.55,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 0.9994532531437944,
+        "flagged_rate": 0.0005127800568002524,
+        "expected_cost_per_order": 4.975149889555064,
+        "cost_per_10k_orders": 49751.49889555064,
+        "savings_vs_no_action_per_10k": -51.278005680019945
+      },
+      {
+        "threshold": 0.56,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 0.9994532531437944,
+        "flagged_rate": 0.0005127800568002524,
+        "expected_cost_per_order": 4.975149889555064,
+        "cost_per_10k_orders": 49751.49889555064,
+        "savings_vs_no_action_per_10k": -51.278005680019945
+      },
+      {
+        "threshold": 0.57,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.58,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.59,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.6,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.61,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.62,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.63,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.64,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.65,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.66,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.67,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.68,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.69,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.7,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.71,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.72,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.73,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.74,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.75,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.76,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.77,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.78,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.79,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      },
+      {
+        "threshold": 0.8,
+        "recall": 0.0,
+        "precision": 0.0,
+        "specificity": 1.0,
+        "flagged_rate": 0.0,
+        "expected_cost_per_order": 4.970022088987062,
+        "cost_per_10k_orders": 49700.22088987062,
+        "savings_vs_no_action_per_10k": 0.0
+      }
+    ]
+  }
+}
