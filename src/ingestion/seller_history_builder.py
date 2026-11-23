@@ -12,7 +12,6 @@ def _compute_single_seller_history(
     """Compute resolved-before-purchase seller history for one seller chronologically."""
     purch_ns = group["order_purchase_timestamp"].astype("int64").to_numpy()
     deliv_ns = group["order_delivered_customer_date"].astype("int64").to_numpy()
-    # Guard against anomalous timestamps where delivery precedes purchase.
     effective_resolved_ns = np.maximum(deliv_ns, purch_ns)
 
     late_vals = group["is_late"].to_numpy(dtype=float)
@@ -23,7 +22,6 @@ def _compute_single_seller_history(
     cum_late = np.concatenate(([0.0], np.cumsum(late_vals[resolved_order])))
     cum_delay = np.concatenate(([0.0], np.cumsum(delay_vals[resolved_order])))
 
-    # Strictly '<' ensures neither the current order nor any in-flight/future order leaks.
     resolved_counts = np.searchsorted(sorted_resolved_ns, purch_ns, side="left")
     prior_late_sums = cum_late[resolved_counts]
     prior_delay_sums = cum_delay[resolved_counts]
@@ -39,7 +37,6 @@ def _compute_single_seller_history(
         0.0,
     )
 
-    # Prior order count uses strict '<' on purchase timestamps to prevent same-second ties.
     prior_orders = np.searchsorted(purch_ns, purch_ns, side="left")
 
     return pd.DataFrame(

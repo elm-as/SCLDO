@@ -1,6 +1,6 @@
 <div align="center">
 
-# SCLDO — Supply Chain Late-Delivery & SLA Risk Intelligence
+# SCLDO - Supply Chain Late-Delivery & SLA Risk Intelligence
 ### Étude Logistique sur 96 470 Commandes E-Commerce (Olist Brésil, 9 Tables), Validation Temporelle Stricte, Économétrie Causale des Avis 1 Étoile & Politique SLA Asymétrique 8:1
 
 <br/>
@@ -99,16 +99,16 @@ flowchart TD
 
 | Régime / Modèle | Calibration | CV ROC-AUC | CV ECE-10 | OOT ROC-AUC | OOT PR-AUC | OOT Brier | OOT ECE-10 |
 |---|---|---:|---:|---:|---:|---:|---:|
-| **Pre-Dispatch Clean — Logistic Reg.** | Raw | `0.6763` | `0.0375` | `0.7289` | **`0.1466`** | **`0.0568`** | `0.0144` |
-| **Pre-Dispatch Clean — Logistic Reg.** | OOF Isotonic | `0.6587` | `0.0287` | `0.7269` | `0.1409` | `0.0599` | `0.0525` |
-| **Pre-Dispatch Clean — HistGB** | Raw | `0.6701` | `0.0328` | `0.7238` | `0.1235` | `0.0575` | `0.0099` |
-| **Pre-Dispatch Clean — HistGB** | OOF Isotonic | `0.6435` | `0.0337` | `0.7220` | `0.1188` | `0.0575` | `0.0304` |
-| **Pre-Dispatch Clean — LightGBM** | Raw | **`0.6881`** | `0.0421` | **`0.7346`** | `0.1291` | `0.0574` | **`0.0093`** |
-| **Pre-Dispatch Clean — LightGBM** | OOF Isotonic | `0.6588` | **`0.0259`** | `0.7341` | `0.1262` | `0.0582` | `0.0429` |
-| **Post-Carrier Leaky — LightGBM** *(ablation)* | Raw | `0.7528` | `0.0402` | `0.8456` | `0.4528` | `0.0441` | `0.0115` |
-| **Post-Carrier Leaky — LightGBM** *(ablation)* | OOF Isotonic | `0.7273` | `0.0250` | `0.8451` | `0.4376` | `0.0469` | `0.0516` |
+| **Pre-Dispatch Clean - Logistic Reg.** | Raw | `0.6763` | `0.0375` | `0.7289` | **`0.1466`** | **`0.0568`** | `0.0144` |
+| **Pre-Dispatch Clean - Logistic Reg.** | OOF Isotonic | `0.6587` | `0.0287` | `0.7269` | `0.1409` | `0.0599` | `0.0525` |
+| **Pre-Dispatch Clean - HistGB** | Raw | `0.6701` | `0.0328` | `0.7238` | `0.1235` | `0.0575` | `0.0099` |
+| **Pre-Dispatch Clean - HistGB** | OOF Isotonic | `0.6435` | `0.0337` | `0.7220` | `0.1188` | `0.0575` | `0.0304` |
+| **Pre-Dispatch Clean - LightGBM** | Raw | **`0.6881`** | `0.0421` | **`0.7346`** | `0.1291` | `0.0574` | **`0.0093`** |
+| **Pre-Dispatch Clean - LightGBM** | OOF Isotonic | `0.6588` | **`0.0259`** | `0.7341` | `0.1262` | `0.0582` | `0.0429` |
+| **Post-Carrier Leaky - LightGBM** *(ablation)* | Raw | `0.7528` | `0.0402` | `0.8456` | `0.4528` | `0.0441` | `0.0115` |
+| **Post-Carrier Leaky - LightGBM** *(ablation)* | OOF Isotonic | `0.7273` | `0.0250` | `0.8451` | `0.4376` | `0.0469` | `0.0516` |
 
-> **Enseignement critique sur la calibration hors-temps** : en validation croisée intra-période (`CV`), la calibration isotonique réduit l'ECE-10 de `LightGBM` de `0.0421` à `0.0259` (`-38.5 %`). En revanche, sur le holdout OOT où la prévalence chute de `8.79 %` à `6.21 %`, le calibrateur isotonique ajusté sur l'historique surestime mécaniquement le risque (`ECE-10 = 0.0429` vs `0.0093` brut) — illustrant l'importance d'une recalibration glissante en contexte non-stationnaire. Par ailleurs, l'inclusion de la date de remise au transporteur gonfle artificiellement l'AUC OOT de **`+0.1110`** et triple presque le PR-AUC (`0.1262` → `0.4376`).
+> **Enseignement critique sur la calibration hors-temps** : en validation croisée intra-période (`CV`), la calibration isotonique réduit l'ECE-10 de `LightGBM` de `0.0421` à `0.0259` (`-38.5 %`). En revanche, sur le holdout OOT où la prévalence chute de `8.79 %` à `6.21 %`, le calibrateur isotonique ajusté sur l'historique surestime mécaniquement le risque (`ECE-10 = 0.0429` vs `0.0093` brut) - illustrant l'importance d'une recalibration glissante en contexte non-stationnaire. Par ailleurs, l'inclusion de la date de remise au transporteur gonfle artificiellement l'AUC OOT de **`+0.1110`** et triple presque le PR-AUC (`0.1262` → `0.4376`).
 
 ### 2. Impact Causal du Retard sur les Avis 1 Étoile (`n = 95 824`)
 
@@ -123,7 +123,7 @@ flowchart TD
 
 | Politique SLA | Seuil $\tau$ | Recall Retard | Précision | Commandes Ciblées | Coût / Commande | Coût / 10k Cmd | Économie / 10k Cmd |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| **Aucune action (Baseline)** | — | `0.00%` | — | `0.00%` | `4.9700 R$` | `49 700 R$` | `0 R$` |
+| **Aucune action (Baseline)** | - | `0.00%` | - | `0.00%` | `4.9700 R$` | `49 700 R$` | `0 R$` |
 | **Seuil par défaut** | `0.500` | `0.00%` | `0.00%` | `0.06%` | `4.9755 R$` | `49 755 R$` | `-55 R$` |
 | **Seuil Bayes théorique (10/80)** | `0.125` | `63.56%` | `12.60%` | `31.34%` | `4.9456 R$` | `49 456 R$` | `+245 R$` |
 | **Seuil Optimal Empirique** | **`0.130`** | **`48.00%`** | **`13.95%`** | **`21.38%`** | **`4.7223 R$`** | **`47 223 R$`** | **`+2 477 R$`** |

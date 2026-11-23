@@ -165,7 +165,6 @@ def _attach_temporal_and_ablation_features(frame: pd.DataFrame) -> pd.DataFrame:
     enriched["is_weekend_purchase"] = purchase.dt.dayofweek.isin([5, 6]).astype(float)
     enriched["is_q4_peak"] = purchase.dt.month.isin([11, 12]).astype(float)
 
-    # Explicitly segregated post-carrier columns used ONLY in the leakage ablation study.
     enriched["carrier_handoff_days"] = (
         (carrier - purchase).dt.total_seconds() / 86400.0
     )

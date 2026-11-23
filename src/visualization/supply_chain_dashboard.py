@@ -211,7 +211,7 @@ def build_scldo_dashboard_html(
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SCLDO — Supply Chain Late-Delivery &amp; SLA Risk Intelligence</title>
+  <title>SCLDO - Supply Chain Late-Delivery &amp; SLA Risk Intelligence</title>
   <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
   <style>{_DASHBOARD_CSS}</style>
 </head>
@@ -219,7 +219,7 @@ def build_scldo_dashboard_html(
   <div class="container">
     <div class="header">
       <div>
-        <h1>SCLDO — Supply Chain Late-Delivery &amp; SLA Risk Intelligence</h1>
+        <h1>SCLDO - Supply Chain Late-Delivery &amp; SLA Risk Intelligence</h1>
         <p>Olist Brazilian E-Commerce (9 Relational Tables) · Strict Temporal Validation · Causal Review Econometrics · 8:1 SLA Policy</p>
       </div>
       <div class="meta-strip">

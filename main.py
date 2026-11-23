@@ -34,6 +34,8 @@ def _find_best_clean_probs(payload_benchmark: object) -> object:
 def run_scldo_study(config: PipelineConfig) -> ScldoReportPayload:
     """Execute ingestion, temporal CV/OOT modeling, causal econometrics, SHAP, and visuals."""
     start_time = time.perf_counter()
+
+    # 1- Importation et jointure des 9 tables Olist
     print("[1/6] Loading and joining all 9 Olist relational CSV tables...", flush=True)
     raw_tables = load_olist_raw_tables(config.paths.raw_data_dir)
     orders_df, audit_stats = build_olist_order_dataset(raw_tables, config.temporal)
@@ -43,9 +45,11 @@ def run_scldo_study(config: PipelineConfig) -> ScldoReportPayload:
         flush=True,
     )
 
+    # 2- Entrainement chronologique et calibration sans fuite
     print("[2/6] Running 5-fold expanding temporal CV, OOF Isotonic & leakage ablation...", flush=True)
     benchmark = run_temporal_benchmark_and_ablation(orders_df, config)
 
+    # 3- Analyse des facteurs de retard (SHAP)
     print("[3/6] Computing TreeSHAP pre-dispatch risk drivers on OOT holdout...", flush=True)
     shap_input = ShapComputationInput(
         model=benchmark.clean_lgbm_model,
@@ -56,6 +60,7 @@ def run_scldo_study(config: PipelineConfig) -> ScldoReportPayload:
     )
     shap_summary = compute_shap_delay_drivers(shap_input, top_k=15)
 
+    # 4- Effet causal du retard sur les notes 1 etoile et politique SLA
     print("[4/6] Estimating causal delay -> 1-star review impact with bootstrap CIs...", flush=True)
     causal_impact = estimate_causal_delay_review_impact(
         orders_df,
@@ -77,6 +82,7 @@ def run_scldo_study(config: PipelineConfig) -> ScldoReportPayload:
         sla_policy=sla_policy,
     )
 
+    # 5- Export des graphiques, du dashboard et des resultats JSON
     print("[6/6] Rendering 300 DPI figures, Plotly dashboard, and results.json...", flush=True)
     render_all_scldo_figures(payload, config.paths.images_dir)
     build_scldo_dashboard_html(payload, config.paths.artifacts_dir / "dashboard.html")

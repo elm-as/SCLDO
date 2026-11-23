@@ -167,7 +167,6 @@ def evaluate_temporal_model(
     oot_estimator.fit(x_tr_full, y_train)
     oot_raw = oot_estimator.predict_proba(x_oot_mat)[:, 1]
 
-    # Calibrate OOT predictions strictly using historical outer-CV out-of-fold scores.
     oot_calibrator = IsotonicRegression(y_min=0.0, y_max=1.0, out_of_bounds="clip")
     oot_calibrator.fit(cv_raw, cv_y)
     oot_iso = oot_calibrator.predict(oot_raw)

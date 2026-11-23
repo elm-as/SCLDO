@@ -31,8 +31,6 @@ def evaluate_sla_threshold(
     specificity = float(tn / max(tn + fp, 1))
     flagged_rate = float((tp + fp) / max(n_total, 1))
 
-    # Proactive intervention avoids unmitigated churn/1-star loss on true positives
-    # while incurring the intervention cost on every flagged shipment (TP + FP).
     total_cost = (tp + fp) * c_proactive + fn * c_late_loss
     expected_cost = float(total_cost / max(n_total, 1))
     no_action_cost = float(np.mean(y_arr) * c_late_loss)
@@ -64,7 +62,6 @@ def optimize_sla_intervention_policy(
     if c_fp <= 0.0 or c_fn <= c_fp:
         raise ValueError("Require 0 < proactive_intervention_cost < unmitigated_late_loss.")
 
-    # Intervene when expected avoided loss p * C_fn exceeds intervention cost C_fp.
     bayes_tau = float(c_fp / c_fn)
     grid = np.linspace(0.02, 0.80, config.threshold_grid_points)
     sweep = tuple(
